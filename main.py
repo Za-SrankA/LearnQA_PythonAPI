@@ -1,28 +1,9 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
-
-print("Hello, world!")
 
 import requests
 
-response = requests.get("https://playground.learnqa.ru/api/hello")
-print(response.text)
+response = requests.get("https://playground.learnqa.ru/api/long_redirect", allow_redirects=True)
+first_response = response.history[0]
+second_response = response
 
-print ("Hello from Lina")
-
-response = requests.get("https://playground.learnqa.ru/api/get_text")
-print(response.text)
+print(first_response.url)
+print(second_response.url)
