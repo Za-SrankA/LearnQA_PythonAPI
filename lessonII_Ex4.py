@@ -25,4 +25,5 @@ if response3.json()['status'] == status2:
     print(f"После ожидания статус правильный")
 else:
     print(f"После ожидания статус неправильный")
-    print(response3.text)
+
+print(response3.text)
